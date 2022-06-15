@@ -22,15 +22,14 @@
        karmaExecuteTests: false
     Release:
        cloudFoundryDeploy: true
+       cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com"
+       cfOrg: "803f526ftrial"
+       cfSpace: "dev"
+       cfAppName: ""
+       cfCredentialsId: "cfdeploy"
        tmsUpload: false
     steps:
       cloudFoundryDeploy:
-        cloudFoundry: 
-          apiEndpoint: "https://api.cf.us10.hana.ondemand.com"
-          org: "803f526ftrial"
-          space: "dev"
-          credentialsId: "cfdeploy"
-          appName: ""
         mtaDeployParameters: "-f --version-rule ALL"
       artifactPrepareVersion:
         versioningType: "cloud_noTag"

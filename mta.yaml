@@ -47,7 +47,7 @@ modules:
         properties:
           forwardAuthToken: true
           strictSSL: true
-          name: srv-binding
+          name: srv-api
           url: "~{srv-url}"
     build-parameters:
       requires:

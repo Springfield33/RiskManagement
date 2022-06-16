@@ -16,7 +16,7 @@
       },
       {
         "source": "^/service/(.*)$",
-        "destination": "srv-binding",
+        "destination": "srv-api",
         "authenticationType": "xsuaa"
       }
     ]

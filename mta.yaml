@@ -36,6 +36,34 @@ modules:
     requires:
       - name: risk-management-db
 
+  # -------------------- APPROUTER -----------------------------
+  - name: risk-management-approuter
+    # ------------------------------------------------------------
+    type: nodejs
+    path: approuter
+    requires:
+      - name: risk-management-xsuaa
+      - name: srv-api
+        properties:
+          forwardAuthToken: true
+          strictSSL: true
+          name: srv-binding
+          url: "~{srv-url}"
+    build-parameters:
+      requires:
+        - name: risk-management-app
+          artifacts:
+          - ./*
+          target-path: resources
+
+ # -------------------- UI -----------------------------------
+  - name: risk-management-app
+    # ------------------------------------------------------------
+    type: html5
+    path: app
+    build-parameters:
+      supported-platforms: []
+
 resources:
   - name: risk-management-db
     type: com.sap.xs.hdi-container
